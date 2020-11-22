@@ -1,7 +1,7 @@
 import os
 
 # Absolute path to the folder with Traffic Signs dataset
-full_path_to_images = "/Users/joke/Personnel/UTBM/Automne_2020/IN54/Projet/TS_Dataset/FullIJCNN2013/ts_one"
+full_path_to_images = "/Users/joke/Personnel/UTBM/Automne_2020/IN54/Projet/TS_Dataset/ts"
 
 # Getting list of full paths to downloaded images
 # Changing the current directory to one with images

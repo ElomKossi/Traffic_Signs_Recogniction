@@ -3,20 +3,7 @@ import pandas as pd
 import  cv2
 
 # Absolute path to the folder with Traffic Signs dataset
-full_path_to_ts_dataset = "/Users/joke/Personnel/UTBM/Automne_2020/IN54/Projet/TS_Dataset/FullIJCNN2013/ts_one"
-
-# Lists for categories according to the classes ID's
-# Prohibitory category: circular Traffic Signs with white background and red border line
-prohibitory = [0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 15, 16]
-
-# Danger category: triangular Traffic Signs with white background and red border line
-danger = [11, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
-
-# Mandatory category: circular Traffic Signs with blue background
-mandatory = [33, 34, 35, 36, 37, 38, 39, 40]
-
-# Other category:
-other = [6, 12, 13, 14, 17, 32, 41, 42]
+full_path_to_ts_dataset = "/Users/joke/Personnel/UTBM/Automne_2020/IN54/Projet/TS_Dataset/ts"
 
 # Loading six columns into Pandas dataFrame
 annotation = pd.read_csv(full_path_to_ts_dataset + '/' + 'gt.txt',
@@ -35,10 +22,7 @@ annotation['width'] = ''
 annotation['height'] = ''
 
 # Getting category's ID according to the class's ID
-annotation.loc[annotation['ClassID'].isin(prohibitory), 'CategoryID'] = 0
-annotation.loc[annotation['ClassID'].isin(danger), 'CategoryID'] = 1
-annotation.loc[annotation['ClassID'].isin(mandatory), 'CategoryID'] = 2
-annotation.loc[annotation['ClassID'].isin(other), 'CategoryID'] = 3
+annotation['CategoryID'] = annotation['ClassID']
 
 # Calculating bounding box's center in x and y for all rows
 annotation['center x'] = (annotation['XMax'] + annotation['XMin']) / 2

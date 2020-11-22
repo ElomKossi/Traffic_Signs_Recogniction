@@ -1,5 +1,5 @@
 # Full or absolute path to the folder with Traffic Signs images
-full_path_to_images = "/Users/joke/Personnel/UTBM/Automne_2020/IN54/Projet/TS_Dataset/FullIJCNN2013/ts_one"
+full_path_to_images = "/Users/joke/Personnel/UTBM/Automne_2020/IN54/Projet/TS_Dataset/ts"
 
 # Defining counter for classes
 counter = 0
