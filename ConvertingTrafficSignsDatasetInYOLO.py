@@ -26,6 +26,7 @@ annotation = pd.read_csv(full_path_to_ts_dataset + '/' + 'gt.txt',
 
 print(annotation.head())
 
+# Calculating numbers for YOLO format without normalization
 # Adding new empty columns to dataFrame to save numbers for YOLO format
 annotation['CategoryID'] = ''
 annotation['center x'] = ''
@@ -55,6 +56,13 @@ print(newAnnotationTab.head())
 # Changing the current directory to one with images
 os.chdir(full_path_to_ts_dataset)
 
+
+"""
+Normalizing YOLO numbers according to the real image width and height
+Saving annotations in txt files
+Converting images from ppm to jpg
+"""
+# Using os.walk for going through all directories and files in them from the current directory
 # Fullstop in os.walk('.') means the current directory
 for current_dir, dirs, files in os.walk('.'):
     # Going through all files
